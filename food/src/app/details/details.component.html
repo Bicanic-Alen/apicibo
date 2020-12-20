@@ -5,7 +5,12 @@
   <img src="{{prod.product.image_small_url}}">
   </div>
   <div class="col-sm-4 col-lg-2">
-    <h6>{{prod.product.generic_name}}</h6>
+    <div *ngIf ="prod.product.generic_name">
+      <h5>{{prod.product.generic_name}}</h5>
+    </div>
+    <div *ngIf = "!prod.product.generic_name">
+      <h5><b>{{prod.product.product_name}}</b></h5>
+    </div>
     <p><b>quantity: </b>{{prod.product.product_quantity}} g</p>
     <p><b>Packaging: </b>{{prod.product.packaging}}</p>
     <p><b>Brand: </b>{{prod.product.brands}}</p>
